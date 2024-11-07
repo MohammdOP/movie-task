@@ -4,6 +4,11 @@ export const MovieListOuterContainer = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
+  @media (max-width: 576px) {
+    max-width: 100%;
+    padding: 0.5rem;
+    margin: 0;
+  }
 `;
 
 export const MovieListContainer = styled.div`

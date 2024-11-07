@@ -8,6 +8,7 @@ import {
   ReleaseDate,
   RatingBadgeContainer,
   StyledCircularProgressbar,
+  OverviewText,
 } from "./MovieCard.styles";
 import { buildStyles } from "react-circular-progressbar";
 
@@ -18,6 +19,7 @@ function MovieCard({
   imageUrl,
   isBlurred,
   onTogglePopup,
+  overview,
 }) {
   return (
     <CardContainer blur={isBlurred}>
@@ -55,6 +57,7 @@ function MovieCard({
             year: "numeric",
           })}
         </ReleaseDate>
+        <OverviewText>{overview}</OverviewText>
       </CardInfo>
     </CardContainer>
   );

@@ -9,7 +9,8 @@ export const CardContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   width: 100%;
-  max-width: 180px;
+  max-width: 190px;
+
   text-align: center;
   position: relative;
   filter: ${({ blur }) => (blur ? "blur(10px)" : "none")};
@@ -17,16 +18,30 @@ export const CardContainer = styled.div`
   &:hover {
     transform: translateY(-5px);
   }
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    align-items: flex-start;
+  }
 `;
 
 export const ImageContainer = styled.div`
   position: relative;
+
+  @media (max-width: 576px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const MovieImage = styled.img`
   width: 100%;
   height: auto;
   border-bottom: 1px solid #ddd;
+  @media (max-width: 576px) {
+    width: 100%;
+  }
 `;
 
 export const MenuIcon = styled.div`
@@ -53,6 +68,9 @@ export const MenuIcon = styled.div`
 export const CardInfo = styled.div`
   padding: 0.5rem;
   text-align: left;
+  @media (max-width: 576px) {
+    padding: 1rem;
+  }
 `;
 
 export const Title = styled.h3`
@@ -69,6 +87,17 @@ export const Title = styled.h3`
 export const ReleaseDate = styled.p`
   color: #666;
   font-size: 0.875rem;
+`;
+
+export const OverviewText = styled.p`
+  color: #666;
+  font-size: 0.875rem;
+  display: none;
+
+  @media (max-width: 576px) {
+    display: block;
+    margin-top: 0.5rem;
+  }
 `;
 
 export const RatingBadgeContainer = styled.div`

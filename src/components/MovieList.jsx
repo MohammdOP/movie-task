@@ -124,6 +124,7 @@ function MovieList() {
                   prev === movie.id ? null : movie.id
                 )
               }
+              overview={movie.overview}
             />
 
             {blurredCardId === movie.id && (
