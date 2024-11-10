@@ -1,8 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
-import MovieList from "./components/MovieList";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./routes/HomePage";
+import MoviesPage from "./routes/MoviesPage";
+import NotFoundPage from "./routes/NotFoundPage";
+import MainLayout from "./routes/MainLayout";
 import { FilterProvider } from "./FilterContext";
 
 const queryClient = new QueryClient();
@@ -11,12 +12,15 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <FilterProvider>
-        <Navbar />
-        <div className="app-container">
-          <Sidebar />
-          <MovieList />
-        </div>
-        <Footer />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainLayout />}>
+              <Route index element={<HomePage />} />
+              <Route path="movies" element={<MoviesPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </FilterProvider>
     </QueryClientProvider>
   );
