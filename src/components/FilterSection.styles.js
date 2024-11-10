@@ -7,14 +7,14 @@ export const SectionContainer = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   border: 1px solid #e0e0e0;
   margin-bottom: 1.5rem;
+  overflow: hidden;
 `;
 
 export const SectionTitle = styled.h3`
   font-size: 1rem;
   font-weight: bold;
   color: #000;
-  position: relative;
-  left: 10px;
+  margin-left: 0.4rem;
 `;
 
 export const SectionContent = styled.div`
@@ -65,7 +65,8 @@ export const GenreItem = styled.li`
   border-radius: 14px;
   padding: 4px 12px;
   font-size: 0.9em;
-  cursor: pointer;
+  margin-right: 6px;
+  margin-top: 8px;
 
   ${({ selected }) =>
     selected
@@ -82,4 +83,22 @@ export const GenreItem = styled.li`
   &:hover {
     background-color: #e0e0e0;
   }
+`;
+
+export const FilterLabel = styled.label`
+  font-size: 0.875rem;
+  color: #5e5e5e;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  margin-left: 0.4rem;
+  display: block;
+`;
+
+export const HorizanitalWraper = styled.hr`
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: calc(100% + 2rem);
+  margin: 0 -1rem;
+  position: relative;
+  bottom: 6px;
 `;

@@ -6,6 +6,8 @@ import {
   SectionContent,
   SectionSelect,
   ToggleIcon,
+  HorizanitalWraper,
+  SortLabel,
 } from "./SortSection.styles";
 import { useFilter } from "../FilterContext";
 
@@ -28,10 +30,11 @@ function SortSection() {
         <SectionTitle>Sort</SectionTitle>
         <ToggleIcon isOpen={isOpen} />
       </SectionTitleContainer>
-
       {isOpen && (
         <SectionContent>
-          <label htmlFor="sort">Sort Results By</label>
+          <HorizanitalWraper />
+          <SortLabel htmlFor="sort">Sort Results By</SortLabel>
+
           <SectionSelect id="sort" onChange={handleSortChange}>
             <option value="popularity.desc">Popularity Descending</option>
             <option value="popularity.asc">Popularity Ascending</option>

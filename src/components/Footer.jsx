@@ -19,7 +19,7 @@ function Footer() {
             alt="TMDB Logo"
           />
 
-          <JoinCommunityAnchor href="#">Join the Community</JoinCommunityAnchor>
+          <JoinCommunityAnchor href="#">JOIN THE COMMUNITY</JoinCommunityAnchor>
         </FooterLogoContainer>
         <FooterSections>
           <FooterSection>

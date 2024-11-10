@@ -6,6 +6,8 @@ import {
   GenreItem,
   ToggleIcon,
   SectionTitleContainer,
+  FilterLabel,
+  HorizanitalWraper,
 } from "./FilterSection.styles";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -55,8 +57,8 @@ function FilterSection() {
 
       {isOpen && (
         <SectionContent>
-          <SectionTitle>Genres</SectionTitle>
-
+          <HorizanitalWraper />
+          <FilterLabel>Genres</FilterLabel>
           {isLoading ? (
             <p>Loading genres...</p>
           ) : isError ? (

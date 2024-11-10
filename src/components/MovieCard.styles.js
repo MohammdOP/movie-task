@@ -10,11 +10,10 @@ export const CardContainer = styled.div`
   transition: transform 0.3s ease;
   width: 100%;
   max-width: 190px;
-
+  min-height: 390px;
   text-align: center;
   position: relative;
   filter: ${({ blur }) => (blur ? "blur(10px)" : "none")};
-
   &:hover {
     transform: translateY(-5px);
   }
@@ -23,6 +22,7 @@ export const CardContainer = styled.div`
     flex-direction: column;
     max-width: none;
     align-items: flex-start;
+    display: none;
   }
 `;
 
