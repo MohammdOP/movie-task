@@ -10,6 +10,7 @@ export const CardContainer = styled.div`
   transition: transform 0.3s ease;
   width: 100%;
   max-width: 190px;
+  min-width: 150px;
   min-height: 390px;
   text-align: center;
   position: relative;
@@ -22,7 +23,7 @@ export const CardContainer = styled.div`
     flex-direction: column;
     max-width: none;
     align-items: flex-start;
-    display: none;
+    display: block;
   }
 `;
 

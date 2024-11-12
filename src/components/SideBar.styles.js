@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const SidebarWrapper = styled.aside`
   width: 290px;
   padding: 1rem;
+  min-width: 290px;
 
   @media (max-width: 768px) {
     width: 100%;

@@ -7,9 +7,9 @@ function RootLayout() {
   return (
     <FilterProvider>
       <Navbar />
-      <main className="app-container">
+      <>
         <Outlet />
-      </main>
+      </>
       <Footer />
     </FilterProvider>
   );

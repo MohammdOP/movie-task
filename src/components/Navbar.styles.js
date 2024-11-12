@@ -8,6 +8,7 @@ export const NavbarWrapper = styled.nav`
   background-color: #0d253f;
   color: #ffffff;
   height: 64px;
+  width: 100vw;
 
   @media (max-width: 1370px) {
     padding: 0 14rem;

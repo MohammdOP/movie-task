@@ -52,6 +52,7 @@ function MovieList() {
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [blurredCardId]);
   const {
     data,
@@ -97,7 +98,7 @@ function MovieList() {
     fetchNextPage();
   };
 
-  const isMobile = useMediaQuery({ maxWidth: 576 });
+  const isMobile = useMediaQuery({ maxWidth: 414 });
 
   const renderMovies = () =>
     data.pages.map((page, pageIndex) => (
