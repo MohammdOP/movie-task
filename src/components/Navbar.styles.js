@@ -24,22 +24,16 @@ export const NavbarWrapper = styled.nav`
 
   @media (max-width: 1113px) {
     padding: 0 6rem;
+    font-size: 0.8rem;
   }
 
   @media (max-width: 1050px) {
     padding: 0 4rem;
+    font-size: 0.6rem;
   }
 
   @media (max-width: 845px) {
     padding: 0 2rem;
-
-    .main-nav {
-      display: none;
-    }
-
-    .burger-menu-icon {
-      display: inline-block;
-    }
   }
 
   @media (max-width: 790px) {
@@ -48,6 +42,13 @@ export const NavbarWrapper = styled.nav`
 
   @media (max-width: 414px) {
     padding: 0 1rem;
+    .main-nav {
+      display: none;
+    }
+
+    .burger-menu-icon {
+      display: inline-block;
+    }
   }
 `;
 
@@ -57,8 +58,11 @@ export const LogoLargeScreen = styled.div`
     height: 30px;
     margin-right: 1rem;
   }
+  @media (max-width: 850px) {
+    margin-left: 1rem;
+  }
 
-  @media (max-width: 845px) {
+  @media (max-width: 500px) {
     display: none;
   }
 `;
@@ -71,7 +75,7 @@ export const LogoSmallScreen = styled.div`
     left: 9rem;
   }
 
-  @media (max-width: 845px) {
+  @media (max-width: 500px) {
     display: inline-block;
   }
 `;

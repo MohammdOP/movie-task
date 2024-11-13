@@ -44,7 +44,7 @@ function MovieList() {
   const { searchParams } = useFilter();
   const [isLoadMoreClicked, setIsLoadMoreClicked] = useState(false);
   const [blurredCardId, setBlurredCardId] = useState(null);
-  const handleClickOutside = (e) => {
+  const handleClickOutside = () => {
     if (blurredCardId) {
       setBlurredCardId(null);
     }
