@@ -1,10 +1,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./routes/HomePage";
-import MoviesPage from "./routes/MoviesPage";
-import NotFoundPage from "./routes/NotFoundPage";
-import MainLayout from "./routes/MainLayout";
-import { FilterProvider } from "./FilterContext";
+import HomePage from "./routes/HomePage/HomePage";
+import MoviesPage from "./routes/MoviesPage/MoviesPage";
+import NotFoundPage from "./routes/NotFoundPage/NotFoundPage";
+import MainLayout from "./routes/MainLayout/MainLayout";
+import { FilterProvider } from "./contexts/FilterContext";
 
 const queryClient = new QueryClient();
 

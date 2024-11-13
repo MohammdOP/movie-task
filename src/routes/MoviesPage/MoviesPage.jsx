@@ -1,5 +1,5 @@
-import Sidebar from "../components/Sidebar";
-import MovieList from "../components/MovieList";
+import MovieList from "../../components/MovieList/MovieList";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import { MoviesPageContainer } from "./MoviesPage.styles";
 
 function MoviesPage() {

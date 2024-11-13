@@ -4,42 +4,21 @@ import {
   MovieListContainer,
   MovieListOuterContainer,
 } from "./MovieList.styles";
-import MovieCard from "./MovieCard";
+
 import React, { useEffect, useRef, useCallback, useState } from "react";
-import { useFilter } from "../FilterContext";
+import { useFilter } from "../../contexts/FilterContext";
 import {
   PopupContainer,
   PopupContent,
   PopupLink,
   PopupLinkContainer,
-} from "./MovieCard.styles";
-import MobileMovieCard from "./MobileMovieCard";
-import { useMediaQuery } from "react-responsive";
+} from "../MovieCard/MovieCard.styles";
 
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNDg2YzQwYWVjYzllYjVlMTJhMDkyOGRhYzkyMTdkNiIsIm5iZiI6MTczMDYyMDc4My44NDE2MDQsInN1YiI6IjY3MjcyYWQyOWUwODc3ZDFkOGFmODk2OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.K8sEr7EtvE_Udy3OjM4meXraSV7zJKL3E-YkiJBPPaQ",
-  },
-};
-async function fetchMovies({ pageParam = 1, searchParams }) {
-  const baseUrl = `https://api.themoviedb.org/3/discover/movie`;
-  const url = new URL(baseUrl);
-  url.searchParams.set("page", pageParam);
-  url.searchParams.set("include_adult", "false");
-  url.searchParams.set("include_video", "false");
-  url.searchParams.set("language", "en-US");
-  if (searchParams) {
-    for (const [key, value] of Object.entries(searchParams)) {
-      url.searchParams.set(key, value);
-    }
-  }
-  const response = await fetch(url, options);
-  const data = await response.json();
-  return data.results;
-}
+import { useMediaQuery } from "react-responsive";
+import MovieCard from "../MovieCard/MovieCard";
+import MobileMovieCard from "../MobileMovieCard/MobileMovieCard";
+import { fetchMovies } from "../../services/moviesFetchingService";
+
 function MovieList() {
   const { searchParams } = useFilter();
   const [isLoadMoreClicked, setIsLoadMoreClicked] = useState(false);

@@ -9,7 +9,7 @@ import {
   HorizanitalWraper,
   SortLabel,
 } from "./SortSection.styles";
-import { useFilter } from "../FilterContext";
+import { useFilter } from "../../contexts/FilterContext";
 
 function SortSection() {
   const [isOpen, setIsOpen] = useState(false);

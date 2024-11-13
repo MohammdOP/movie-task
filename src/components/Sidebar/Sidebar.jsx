@@ -1,9 +1,10 @@
-import SortSection from "./SortSection";
-import WatchSection from "./WatchSection";
-import FilterSection from "./FilterSection";
+import SortSection from "../SortSection/SortSection";
+import WatchSection from "../WatchSection/WatchSection";
+
 import { SidebarWrapper, SidebarTitle, SearchAnchor } from "./SideBar.styles";
-import { useFilter } from "../FilterContext";
+import { useFilter } from "../../contexts/FilterContext";
 import { useState } from "react";
+import FilterSection from "../FilterSection/FilterSection";
 
 function Sidebar() {
   useState();

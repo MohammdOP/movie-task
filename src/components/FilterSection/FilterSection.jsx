@@ -11,25 +11,28 @@ import {
 } from "./FilterSection.styles";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useFilter } from "../FilterContext";
+import { useFilter } from "../../contexts/FilterContext";
+import { fetchGenres } from "../../services/filterFetchingService";
 
-const fetchGenres = async () => {
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNDg2YzQwYWVjYzllYjVlMTJhMDkyOGRhYzkyMTdkNiIsIm5iZiI6MTczMDYyMDc4My44NDE2MDQsInN1YiI6IjY3MjcyYWQyOWUwODc3ZDFkOGFmODk2OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.K8sEr7EtvE_Udy3OjM4meXraSV7zJKL3E-YkiJBPPaQ",
-    },
-  };
+// import axios from "axios";
 
-  const response = await fetch(
-    "https://api.themoviedb.org/3/genre/movie/list?language=en",
-    options
-  );
-  const data = await response.json();
-  return data.genres;
-};
+// const fetchGenres = async () => {
+//   const options = {
+//     method: "GET",
+//     headers: {
+//       accept: "application/json",
+//       Authorization:
+//         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNDg2YzQwYWVjYzllYjVlMTJhMDkyOGRhYzkyMTdkNiIsIm5iZiI6MTczMDYyMDc4My44NDE2MDQsInN1YiI6IjY3MjcyYWQyOWUwODc3ZDFkOGFmODk2OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.K8sEr7EtvE_Udy3OjM4meXraSV7zJKL3E-YkiJBPPaQ",
+//     },
+//   };
+
+//   const response = await axios.get(
+//     "https://api.themoviedb.org/3/genre/movie/list?language=en",
+//     options
+//   );
+
+//   return response.data.genres;
+// };
 
 function FilterSection() {
   const [isOpen, setIsOpen] = useState(false);
