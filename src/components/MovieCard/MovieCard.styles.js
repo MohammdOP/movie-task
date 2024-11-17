@@ -15,15 +15,18 @@ export const CardContainer = styled.div`
   text-align: center;
   position: relative;
   filter: ${({ blur }) => (blur ? "blur(10px)" : "none")};
+  display: flex;
+  flex-direction: column;
+
   &:hover {
     transform: translateY(-5px);
   }
   @media (max-width: 576px) {
-    display: flex;
-    flex-direction: column;
-    max-width: none;
-    align-items: flex-start;
-    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: auto;
+    text-align: left;
   }
 `;
 

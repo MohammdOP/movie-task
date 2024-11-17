@@ -12,6 +12,20 @@ import {
 } from "./MovieCard.styles";
 import { buildStyles } from "react-circular-progressbar";
 
+/**
+ * A card component for displaying movie details.
+ *
+ * @component
+ * @param {Object} props - Props passed to the component.
+ * @param {string} props.title - The title of the movie.
+ * @param {string} props.releaseDate - The release date of the movie.
+ * @param {number} props.rating - The rating of the movie (on a scale of 0-10).
+ * @param {string} props.imageUrl - URL of the movie poster image.
+ * @param {boolean} props.isBlurred - Whether the card is blurred (e.g., when showing a popup).
+ * @param {Function} props.onTogglePopup - Callback function to toggle the popup display.
+ * @param {string} props.overview - A short description or overview of the movie.
+ * @returns {JSX.Element} The rendered movie card component.
+ */
 function MovieCard({
   title,
   releaseDate,

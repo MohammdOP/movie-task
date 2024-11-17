@@ -9,16 +9,31 @@ import {
   HorizanitalWraper,
   SortLabel,
 } from "./SortSection.styles";
-import { useFilter } from "../../contexts/FilterContext";
+import { useFilter } from "../../hooks/useFilter";
 
+/**
+ * SortSection Component
+ * @component
+ * @description A section in the sidebar that allows users to select sorting options for movies.
+ */
 function SortSection() {
   const [isOpen, setIsOpen] = useState(false);
   const { setSort } = useFilter();
 
+  /**
+   * Update the global sorting option in the FilterContext.
+   * @function
+   * @param {string} option - The sorting option selected by the user.
+   */
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
+  /**
+   * Handles the change event for the sorting dropdown.
+   * @function
+   * @param {Object} e - The event object from the select dropdown.
+   */
   const handleSortChange = (e) => {
     const option = e.target.value;
     setSort(option);

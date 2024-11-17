@@ -29,8 +29,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
+/**
+ * The main navigation bar for the application.
+ *
+ * @component
+ * @returns {JSX.Element}
+ */
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  /**
+   * When the user clicks the menu icon (burger icon), this function updates the state to show or hide the menu.
+   */
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };

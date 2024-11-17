@@ -6,7 +6,7 @@ import {
 } from "./MovieList.styles";
 
 import React, { useEffect, useRef, useCallback, useState } from "react";
-import { useFilter } from "../../contexts/FilterContext";
+useFilter;
 import {
   PopupContainer,
   PopupContent,
@@ -18,11 +18,25 @@ import { useMediaQuery } from "react-responsive";
 import MovieCard from "../MovieCard/MovieCard";
 import MobileMovieCard from "../MobileMovieCard/MobileMovieCard";
 import { fetchMovies } from "../../services/moviesFetchingService";
+import { useFilter } from "../../hooks/useFilter";
 
+/**
+ * Renders a list of movies with infinite scrolling and filtering support.
+ * Fetches movies from the TMDB API and displays them as cards.
+ * Supports mobile and desktop layouts, with a popup for additional actions.
+ *
+ * @component
+ * @returns {JSX.Element} The rendered movie list component.
+ *
+ */
 function MovieList() {
   const { searchParams } = useFilter();
   const [isLoadMoreClicked, setIsLoadMoreClicked] = useState(false);
   const [blurredCardId, setBlurredCardId] = useState(null);
+
+  /**
+   * Clears the blurred movie card when clicking outside of the popup.
+   */
   const handleClickOutside = () => {
     if (blurredCardId) {
       setBlurredCardId(null);
@@ -49,6 +63,11 @@ function MovieList() {
     cacheTime: 0,
     staleTime: 0,
   });
+
+  /**
+   * Handles the intersection of the "Load More" link and triggers data fetching.
+   * @param {IntersectionObserverEntry[]} entries - The entries being observed.
+   */
   const handleIntersection = useCallback(
     ([entry]) => {
       if (entry.isIntersecting && hasNextPage) {
@@ -72,6 +91,10 @@ function MovieList() {
       };
     }
   }, [isLoadMoreClicked, hasNextPage, handleIntersection]);
+
+  /**
+   * Handles manual clicking of the "Load More" link.
+   */
   const handleLoadMoreClick = () => {
     setIsLoadMoreClicked(true);
     fetchNextPage();
