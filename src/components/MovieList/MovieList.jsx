@@ -17,8 +17,8 @@ import {
 import { useMediaQuery } from "react-responsive";
 import MovieCard from "../MovieCard/MovieCard";
 import MobileMovieCard from "../MobileMovieCard/MobileMovieCard";
-import { fetchMovies } from "../../services/moviesFetchingService";
-import { useFilter } from "../../hooks/useFilter";
+import { fetchMovies } from "../../services/fetchingService";
+import { useFilter } from "../../contexts/FilterContext";
 
 /**
  * Renders a list of movies with infinite scrolling and filtering support.

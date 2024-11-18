@@ -11,9 +11,10 @@ import {
 } from "./FilterSection.styles";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useFilter } from "../../hooks/useFilter";
-import { fetchGenres } from "../../services/filterFetchingService";
 
+import { fetchGenres } from "../../services/fetchingService";
+import { useFilter } from "../../contexts/FilterContext";
+useFilter;
 /**
  * A component that renders a filter section allowing users to select genres.
  * Genres are fetched dynamically from the TMDB API, and user selections

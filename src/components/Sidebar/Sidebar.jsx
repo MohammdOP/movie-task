@@ -2,7 +2,7 @@ import SortSection from "../SortSection/SortSection";
 import WatchSection from "../WatchSection/WatchSection";
 
 import { SidebarWrapper, SidebarTitle, SearchAnchor } from "./SideBar.styles";
-import { useFilter } from "../../hooks/useFilter";
+import { useFilter } from "../../contexts/FilterContext";
 import { useState } from "react";
 import FilterSection from "../FilterSection/FilterSection";
 

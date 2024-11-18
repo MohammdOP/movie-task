@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 /**
  * Context to manage movie filtering options and parameters.
@@ -75,4 +75,4 @@ export function FilterProvider({ children }) {
   );
 }
 
-export { FilterContext };
+export const useFilter = () => useContext(FilterContext);

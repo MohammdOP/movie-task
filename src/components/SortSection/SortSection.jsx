@@ -9,7 +9,7 @@ import {
   HorizanitalWraper,
   SortLabel,
 } from "./SortSection.styles";
-import { useFilter } from "../../hooks/useFilter";
+import { useFilter } from "../../contexts/FilterContext";
 
 /**
  * SortSection Component

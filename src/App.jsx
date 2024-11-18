@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import MoviesPage from "./pages/MoviesPage/MoviesPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import MainLayout from "./pages/MainLayout/MainLayout";
+import MainLayout from "./layouts/MainLayout";
 import { FilterProvider } from "./contexts/FilterContext";
 
 const queryClient = new QueryClient();
